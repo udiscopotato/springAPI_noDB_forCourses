@@ -3,6 +3,8 @@ package com.springrest.springrest.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,7 +51,12 @@ public class MyController {
 	}
 	
 	@DeleteMapping("/courses/{courseId}")
-	public Course removeCourse(@PathVariable String courseId) {
-		return this.courseservice.removeCourse(Long.parseLong(courseId));
+	public ResponseEntity<HttpStatus> removeCourse(@PathVariable String courseId) {
+		try {
+			this.courseservice.removeCourse(Long.parseLong(courseId));
+			return new ResponseEntity<>(HttpStatus.OK);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 }
