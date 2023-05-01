@@ -25,11 +25,11 @@ public class CourseService_impl implements CourseService {
 
 	@Override
 	public List<Course> getCourses() {
-		// TODO Auto-generated method stub
+		
 		return list;
 	}
 
-
+    
 	@Override
 	public Course getCourse(long courseId) {
 		Course c = null;
