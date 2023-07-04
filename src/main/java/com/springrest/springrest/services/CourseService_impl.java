@@ -19,6 +19,7 @@ public class CourseService_impl implements CourseService {
 		list.add(new Course(277, "java core", "first test"));
 		list.add(new Course(474,"spring boot", "creating rest api using springbott"));
 		list.add(new Course(117, "pythonn", "second test"));
+		list.add(new Course(118, "JavaScript", "Most Popular in the world"));
 	}
 
 
